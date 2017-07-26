@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+html,
+body,
+.photo-gallery {
+  height: 100%;
+}
+.photo-view {
+  position: relative;
+  height: 100%;
+}
+.photo-frame {
+  height: 100%;
+  position: relative;
+  text-align: center;
+  perspective: 1500px;
+}
+.photo-view-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.photo-view-list li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: animation;
+  pointer-events: none;
+}
+.photo-view-list li img {
+  width: 100%;
+}
+.photo-view-list .current-for {
+  animation: show-for .5s ease-out forwards;
+}
+.photo-view-list .prev1-for {
+  animation: hide-for .5s ease-out forwards;
+}
+.photo-view-list .next1-for {
+  animation: hidden 0s forwards;
+}
+.photo-view-list .current-back {
+  animation: show-back .5s ease-out forwards;
+}
+.photo-view-list .prev1-back {
+  animation: hidden 0s forwards;
+}
+.photo-view-list .next1-back {
+  animation: hide-back .5s ease-out forwards;
+}
+.photo-view-prev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+.photo-view-next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+@keyframes hidden {
+  100% {
+    transform: translate3D(0px, 0px, -50px);
+    opacity: 0;
+    z-index: 1;
+  }
+}
+@keyframes hide-for {
+  0% {
+    transform: translate3D(0px, 0px, 0px);
+  }
+  100% {
+    transform: translate3D(-100%, 0px, 0px);
+    opacity: 0;
+    z-index: 1;
+  }
+}
+@keyframes show-for {
+  0% {
+    transform: translate3D(0px, 0px, -50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3D(0px, 0px, 0px);
+    opacity: 1;
+    z-index: 2;
+  }
+}
+@keyframes hide-back {
+  0% {
+    transform: translate3D(0px, 0px, 0px);
+    opacity: 1;
+    z-index: 2;
+  }
+  100% {
+    transform: translate3D(0px, 0px, -50px);
+    opacity: 0;
+  }
+}
+@keyframes show-back {
+  0% {
+    transform: translate3D(-100%, 0px, 0px);
+    opacity: 0;
+    z-index: 1;
+  }
+  100% {
+    transform: translate3D(0px, 0px, 0px);
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+}
