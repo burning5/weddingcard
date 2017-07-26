@@ -68,6 +68,7 @@ body,
 }
 
 @keyframes hidden {
+  0%,
   100% {
     transform: translate3D(0px, 0px, -50px);
     opacity: 0;
