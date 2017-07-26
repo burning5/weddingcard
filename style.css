@@ -104,6 +104,7 @@ body,
   100% {
     transform: translate3D(0px, 0px, -50px);
     opacity: 0;
+    z-index: 1;
   }
 }
 @keyframes show-back {
@@ -114,6 +115,7 @@ body,
   }
   100% {
     transform: translate3D(0px, 0px, 0px);
+    z-index: 2;
   }
 }
 
