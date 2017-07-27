@@ -48,14 +48,25 @@
   }
 
   function showPhoto(dir) {
-    var num;
+    var num,
+      idx,
+      len;
+
+    if(typeof dir === 'number') {
+      idx = dir;
+      dir = '-for';
+      len = 1;
+    }
 
     dir = dir || '-for';
 
     while(shownItems.length) {
       photoItems[shownItems.shift()].className = '';
     }
-    for(var i = 0; i < toShowItems.length; i++) {
+
+    len = len || toShowItems.length;
+
+    for(var i = 0; i < len; i++) {
       num = toShowItems[i];
 
       shownItems.push(num);
@@ -88,9 +99,6 @@
     photoHm.on('swipeleft', function(e) {
       movePhotoNext();
     });
-    photoHm.on('tap', function(e) {
-      console.log(e)
-    });
   }
 
   function init() {
@@ -107,7 +115,7 @@
 
     bindHandlers();
     updateCurrent(startIdx);
-    showPhoto();
+    showPhoto(startIdx);
   }
 
   init();
