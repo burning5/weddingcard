@@ -10,16 +10,14 @@
 
   var btnPrev = gallery.querySelector('.photo-view-prev'),
     btnNext = gallery.querySelector('.photo-view-next'),
-    photoFrame = gallery.querySelector('.photo-frame'),
     photoItems = gallery.querySelectorAll('.photo-view-list li');
 
   var curIdx = 1,
     maxNum;
 
-  var itemClasses = ['current', 'prev1', 'next1','prev2', 'next2'],
+  var itemClasses = ['current', 'prev1', 'next1'],
     shownItems = [],
-    toShowItems = [],
-    more = false;
+    toShowItems = [];
 
   var photoHm;
 
@@ -37,7 +35,7 @@
     setCurPosition();
   }
 
-  function setCurPosition() { // item num is bigger than 4
+  function setCurPosition() {
     function checkMin(v) {
       return v < 0 ? photoItems.length + v : v;
     }
@@ -84,12 +82,14 @@
   function bindHandlers() {
     btnPrev.addEventListener('click', movePhotoPrev, false);
     btnNext.addEventListener('click', movePhotoNext, false);
-    // window.addEventListener('resize', setCurData, false);
     photoHm.on('swiperight', function() {
       movePhotoPrev();
     });
-    photoHm.on('swipeleft', function() {
+    photoHm.on('swipeleft', function(e) {
       movePhotoNext();
+    });
+    photoHm.on('tap', function(e) {
+      console.log(e)
     });
   }
 
@@ -103,11 +103,11 @@
     if(maxNum > 4) {
       more = true;
     }
-    photoHm = new Hammer(photoFrame);
+    photoHm = new Hammer(gallery);
 
     bindHandlers();
     updateCurrent(startIdx);
-    showPhoto(startIdx);
+    showPhoto();
   }
 
   init();
