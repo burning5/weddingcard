@@ -67,7 +67,7 @@ body,
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: 1.7592%;
+  background-size: 100%;
 }
 .page-inner {
   position: absolute;
@@ -75,7 +75,7 @@ body,
   right: 5%;
   bottom: 5%;
   left: 5%;
-  background-size: 1.7592%;
+  background-size: 100%;
 }
 .page img {
   position: absolute;
