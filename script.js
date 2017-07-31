@@ -91,7 +91,7 @@
   }
 
   function bindHandlers() {
-    btnPrev.addEventListener('click', movePhotoPrev, false);
+    // btnPrev.addEventListener('click', movePhotoPrev, false);
     btnNext.addEventListener('click', movePhotoNext, false);
     photoHm.on('swiperight', function() {
       movePhotoPrev();

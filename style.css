@@ -57,8 +57,13 @@ body,
 }
 .photo-view-next {
   position: absolute;
-  top: 50%;
-  right: 0;
+  bottom: 5%;
+  right: 10%;
+  width: 7%;
+  background: url(icon_next.png) no-repeat;
+  background-size: 100%;
+  border:0;
+  text-indent: -9999px;
 }
 
 .page {
