@@ -30,6 +30,10 @@
     } else {
       curIdx = idx;
     }
+    btnNext.classList.remove('disabled')
+    if(curIdx === maxNum) {
+      btnNext.classList.add('disabled')
+    }
     history.replaceState(null, null, '#' + curIdx)
 
     setCurPosition();
