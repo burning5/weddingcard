@@ -9,52 +9,135 @@
   <meta property="og:description" content="9월 30일 오후 2시, 당산 그랜드컨벤션, 그랜드홀">
   <meta name="description" content="9월 30일 오후 2시, 당산 그랜드컨벤션, 그랜드홀">
   <title>Junsik & Hyolin</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="swiper.min.css">
+  <style>
+    html {
+      background-color: #fafafa;
+      height: 100%;
+    }
+    body {
+      margin: 0 auto;
+      padding: 0;
+      max-width: 640px;
+      height: 100%;
+    }
+    a {
+      text-decoration: none;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-container-vertical>.swiper-pagination-bullets {
+      right: 5px;
+    }
+    .swiper-pagination-bullet {
+      width: 4px;
+      height: 4px;
+      background-color: #7b7b7b;
+      opacity: .3;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #999;
+      opacity: 1;
+    }
+    .swiper-container-vertical>.swiper-pagination-bullets {
+      -webkit-transform: translate3d(0,0,0);
+      transform: translate3d(0,0,0);
+    }
+    .page {
+      background-size: 100%;
+    }
+    .page-inner {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      bottom: 16px;
+      left: 16px;
+      background-size: 100%;
+    }
+    .page img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    .p1 {
+      background-image: url(bg_1_1.jpg);
+    }
+    .p1 .page-inner {
+      background-image: url(bg_1_2.jpg);
+    }
+    .p1 img {
+      width: 71.6666%;
+    }
+    .p2 {
+      background-image: url(bg_2.jpg);
+    }
+    .p2 img {
+      width: 68.2407%;
+    }
+    .p3 {
+      background-image: url(bg_3.jpg);
+    }
+    .p3 img {
+      width: 67.4074%;
+    }
+    .p4 {
+      background-image: url(bg_4.jpg);
+    }
+    .p4 img {
+      width: 65%;
+    }
+    .p4 .map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 46.6145%;
+    }
+    .p4 .map img {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      transform: translateX(0) translateY(0);
+    }
+  </style>
 </head>
 <body>
-  <div class="photo-gallery">
-    <div class="photo-view">
-      <div class="photo-frame">
-        <ul class="photo-view-list">
-          <li>
-            <div class="page p1">
-              <div class="page-inner">
-                <img src="txt_1.png" alt="">
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="page p2">
-              <img src="txt_2.png" alt="">
-            </div>
-          </li>
-          <li>
-            <div class="page p3">
-              <img src="txt_3.png" alt="">
-            </div>
-          </li>
-          <li>
-            <div class="page p4">
-              <img src="txt_4.png" alt="">
-              <div class="map">
-                <a href="https://m.map.daum.net/actions/detailMapView?id=15292647" target="_blank">
-                  <img src="map.jpg" alt="">
-                </a>
-              </div>
-            </div>
-          </li>
-        </ul>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide page p1">
+        <div class="page-inner">
+          <img src="txt_1.png" alt="">
+        </div>
       </div>
-      <div class="photo-view-controls">
-        <button type="button" class="photo-view-next">
-          <span class="part dot1"></span>
-          <span class="part dot2"></span>
-          <span class="part dot3"></span>
-          <span class="part angle"></span>
-        </button>
+      <div class="swiper-slide page p2">
+        <img src="txt_2.png" alt="">
+      </div>
+      <div class="swiper-slide page p3">
+        <img src="txt_3.png" alt="">
+      </div>
+      <div class="swiper-slide page p4">
+        <img src="txt_4.png" alt="">
+        <div class="map">
+          <a href="https://m.map.daum.net/actions/detailMapView?id=15292647" target="_blank">
+            <img src="map.jpg" alt="">
+          </a>
+        </div>
       </div>
     </div>
+    <div class="swiper-pagination"></div>
   </div>
-  <script src="script.js"></script>
+  <script src="swiper.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        direction: 'vertical'
+    });
+  </script>
 </body>
 </html>
